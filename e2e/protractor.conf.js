@@ -13,7 +13,12 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    chromeOptions: {
+      args: [
+        "--proxy-server=localhost:8888"
+      ]
+    }
   },
   SELENIUM_PROMISE_MANAGER: false,
   directConnect: true,
