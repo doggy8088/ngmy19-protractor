@@ -279,6 +279,12 @@
     "body": "await ${1:element}.sendKeys('$2');",
     "description": "Protractor element.sendKeys"
   },
+  "browserwaitForAngularEnabled": {
+    "scope": "javascript,typescript",
+    "prefix": "bwae",
+    "body": "await browser.waitForAngularEnabled(${1|false,true|});",
+    "description": "Protractor browser.waitForAngularEnabled"
+  },
   "browserGet": {
     "scope": "javascript,typescript",
     "prefix": "bg",
