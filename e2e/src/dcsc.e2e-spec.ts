@@ -1,6 +1,6 @@
 import { browser, by, $, $$, element, Key, logging, ExpectedConditions as EC, ElementFinder, promise } from 'protractor';
 
-describe('dcsc.lenovo.com', () => {
+xdescribe('dcsc.lenovo.com', () => {
 
   beforeAll(async () => {
     browser.waitForAngularEnabled(false);

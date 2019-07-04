@@ -1,12 +1,13 @@
 import { browser, by, element, Key, logging, ExpectedConditions as EC } from 'protractor';
 
-fdescribe('udemy.com', () => {
+xdescribe('udemy.com', () => {
 
   beforeAll(async () => { });
   beforeEach(async () => { });
 
   it('should browser 2 pages', async () => {
     await browser.waitForAngularEnabled(false);
+    await browser.manage().window().setSize(1024, 768);
     await browser.get('https://www.udemy.com/');
     await element(by.linkText('電子商務')).click();
 
