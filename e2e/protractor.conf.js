@@ -16,6 +16,7 @@ exports.config = {
     'browserName': 'chrome',
     chromeOptions: {
       args: [
+        // "--headless",
         // "--proxy-server=localhost:8888"
       ]
     }
