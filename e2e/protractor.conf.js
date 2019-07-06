@@ -17,6 +17,13 @@ exports.config = {
     chromeOptions: {
       args: [
         // "--headless",
+        // "--ignore-certificate-errors",
+        // "--disable-popup-blocking",
+        // "--disable-gpu",
+        // "--disable-infobars",
+        // "--window-size=1024,768",
+        // "--window-position=2560,0",
+        // "--user-data-dir=G:/Chrome",
         // "--proxy-server=localhost:8888"
       ]
     }
