@@ -2,16 +2,29 @@ import { browser, by, element, Key, logging, ExpectedConditions as EC } from 'pr
 
 xdescribe('udemy.com', () => {
 
-  beforeAll(async () => { });
+  const defaultTimeout = 5000; // ExpectedConditions's default timeout
+
+  beforeAll(async () => {
+    await browser.waitForAngularEnabled(false);
+    await browser.manage().window().setSize(1024, 768);
+  });
+
   beforeEach(async () => { });
 
   it('should browser 2 pages', async () => {
-    await browser.waitForAngularEnabled(false);
-    await browser.manage().window().setSize(1024, 768);
     await browser.get('https://www.udemy.com/');
-    await element(by.linkText('電子商務')).click();
 
-    await browser.sleep(10000);
+    const elem2 = element(by.xpath('//a[@id="header.browse"]/span[2]'));
+    await browser.wait(EC.elementToBeClickable(elem2), defaultTimeout,
+      'Unable to find elem2 to be clickable.');
+    await elem2.click();
+
+    const elem3 = element(by.xpath('//body[@id="udemy"]/div/div[2]/div/div[2]/div[2]/div/ul/li/ul/li/a/span[2]'));
+    await browser.wait(EC.elementToBeClickable(elem3), defaultTimeout,
+      'Unable to find elem3 to be clickable.');
+    await elem3.click();
+
+    await browser.sleep(100000);
 
     /*
       Add Fiddle Custom Rule: OnBeforeResponse
